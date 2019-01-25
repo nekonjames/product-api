@@ -36,8 +36,8 @@ class ProductController extends AbstractController {
      * @Route("/api/product/products", methods="GET")
      */
     public function getAllProducts(){
-        $products = $this->productRepository->findAll();
-        return JsonResponse::fromJsonString($this->serializer->serialize($products,'json'));
+        $product = $this->productService->getAllProducts();
+        return JsonResponse::fromJsonString($this->serializer->serialize($product,'json'));
 
     }
     /**
@@ -51,6 +51,34 @@ class ProductController extends AbstractController {
         }
         
         $product = $this->productService->addProduct($request);
+        return JsonResponse::fromJsonString($this->serializer->serialize($product,'json'));
+    }
+    
+    /**
+     * Admin request to update existing product is coming as json array
+     * @Route("/admin/product/edit", methods="PUT")
+     */
+    public function updateProduct(Request $request, UserInterface $account = null){
+        
+        if(!$account){
+            throw new UsernameNotFoundException("Admin must log in");
+        }
+        
+        $product = $this->productService->updateProduct($request);
+        return JsonResponse::fromJsonString($this->serializer->serialize($product,'json'));
+    }
+    
+    /**
+     * Admin request to update existing product is coming as json array
+     * @Route("/admin/product/delete/{id}", methods="DELETE")
+     */
+    public function deleteProduct($id, UserInterface $account = null){
+        
+        if(!$account){
+            throw new UsernameNotFoundException("Admin must log in");
+        }
+        
+        $product = $this->productService->deleteProduct($id);
         return JsonResponse::fromJsonString($this->serializer->serialize($product,'json'));
     }
 }

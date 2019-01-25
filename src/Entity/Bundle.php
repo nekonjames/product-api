@@ -41,6 +41,10 @@ class Bundle extends Product{
 
     public function addChildren(Product $product){
         $this->children->add($product);
+    } 
+    
+    public function removeChild(Product $product){
+        $this->children->removeElement($product);
     }
 
 }

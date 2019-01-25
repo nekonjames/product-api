@@ -49,8 +49,7 @@ class BasketService {
              * @var Product $basketProduct 
              */
             if($basketProduct->getId() == $product->getId()){
-                $data = array('error'=>TRUE,'message' => 'Product already in the basket');
-                return $data;
+                throw new RuntimeException("Product already in the basket");
             }
         }
         

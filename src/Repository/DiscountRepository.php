@@ -16,6 +16,8 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * Description of DiscountRepository
  *
  * @author Nekon
+ * 
+ * @method Discount|null findOneBy(array $criteria)
  */
 class DiscountRepository extends ServiceEntityRepository {
     //put your code here

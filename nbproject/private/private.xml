@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Entity/Account.php</file>
-            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Controller/BasketController.php</file>
-            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Entity/Basket.php</file>
+            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Entity/Bundle.php</file>
+            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Repository/DiscountRepository.php</file>
             <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Controller/ProductController.php</file>
-            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Entity/Discount.php</file>
-            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Entity/Order.php</file>
-            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Entity/Product.php</file>
-            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Controller/OrderController.php</file>
+            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Repository/ProductRepository.php</file>
+            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Service/BasketService.php</file>
+            <file>file:/C:/Users/Nekon/Documents/NetBeansProjects/Symfony/product_api/src/Service/ProductService.php</file>
         </group>
     </open-files>
 </project-private>

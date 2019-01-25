@@ -16,6 +16,8 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * Description of ProductRepository
  *
  * @author Nekon
+ * @method Product|null find($id)
+ * @method Product[]|null findAll()
  */
 
 class ProductRepository extends ServiceEntityRepository {

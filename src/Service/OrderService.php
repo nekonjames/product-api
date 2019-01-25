@@ -24,15 +24,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class OrderService {
     //put your code here
     private $basketRepository;
-    private $accountRepository;
-    private $orderRepository;
     private $entityManager;
 
 
-    public function __construct(BasketRepository $basketRepository, OrderRepository $orderRepository, AccountRepository $accountRepository,EntityManagerInterface $entityManager) {
+    public function __construct(BasketRepository $basketRepository,EntityManagerInterface $entityManager) {
         $this->basketRepository = $basketRepository;
-        $this->accountRepository = $accountRepository;
-        $this->orderRepository = $orderRepository;
         $this->entityManager = $entityManager;
     }
     
@@ -41,8 +37,7 @@ class OrderService {
         $basket = $this->basketRepository->findOneBy(["customerAccount"=>$account]);
         
         if(!$basket || !$basket->getProducts()->count() > 0){
-            $data = array('error'=>TRUE,'message' => 'Your basket is empty, add product to your basket before placing order');
-            return $data;
+            throw new RuntimeException("Your basket is empty, add product to your basket before placing order");
         }
         
         $order = new Order();
