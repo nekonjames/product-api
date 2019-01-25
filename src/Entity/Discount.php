@@ -10,6 +10,8 @@ namespace App\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraint as Assert;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Description of Discount

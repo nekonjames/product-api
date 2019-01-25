@@ -33,9 +33,18 @@ class ProductController extends AbstractController {
     }
 
     /**
+     * @Route("/admin/product/products", methods="GET")
+     */
+    public function getAllProductsForAdmin(){
+        $product = $this->productService->getAllProducts();
+        return JsonResponse::fromJsonString($this->serializer->serialize($product,'json'));
+
+    }
+    
+    /**
      * @Route("/api/product/products", methods="GET")
      */
-    public function getAllProducts(){
+    public function getAllProductsForCustomer(){
         $product = $this->productService->getAllProducts();
         return JsonResponse::fromJsonString($this->serializer->serialize($product,'json'));
 

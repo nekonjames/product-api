@@ -26,6 +26,7 @@ class OrderController extends AbstractController{
     private $serializer;
     private $orderService;
 
+    
 
     public function __construct(OrderService $orderService, SerializerInterface $serializer) {
         $this->orderService = $orderService;

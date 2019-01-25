@@ -12,6 +12,7 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraint as Assert;
 
 /**
  * Description of Products
@@ -46,18 +47,30 @@ class Product {
     private $id;
     
     /**
+     * @var string
+     * @Assert\NotBlank(message="Product Name is required")
      * @ORM\Column(type="string", length=100)
+     * @Serializer\Type("string")
      */
     private $name;
     
     /**
+     * @var string
+     * @Assert\NotBlank(message="Product description is required")
+     * @Assert\Length(
+     *      max=200,
+     *      maxMessage="Description cannot be more than {{ limit }} characters"
+     * )
      * @ORM\Column(type="string")
+     * @Serializer\Type("string")
      */
     private $description;
         
     /**
      * @var float
+     * @Assert\NotBlank(message="Price is required")
      * @ORM\Column(type="decimal", scale=2, nullable=false)
+     * @Serializer\Type("float")
      */
     private $price;
     
@@ -70,7 +83,7 @@ class Product {
     private $orders;
 
     /**
-     * @var Discount|null
+     * @var Discount
      * @ORM\OneToOne(targetEntity="Discount", mappedBy="product", cascade={"persist", "remove"})
      */
     private $discount;
